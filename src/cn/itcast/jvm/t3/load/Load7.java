@@ -10,11 +10,14 @@ public class Load7 {
         MyClassLoader classLoader = new MyClassLoader();
         Class<?> c1 = classLoader.loadClass("MapImpl1");
         Class<?> c2 = classLoader.loadClass("MapImpl1");
-        System.out.println(c1 == c2);
+        System.out.println(c1 == c2); // true
 
+        // 使用不同的类加载器对象加载同一个类会得到不同的对象, 因为
+        // 唯一确定一个类的方式：
+        // 包名、类名、类加载器都必须完全相同
         MyClassLoader classLoader2 = new MyClassLoader();
         Class<?> c3 = classLoader2.loadClass("MapImpl1");
-        System.out.println(c1 == c3);
+        System.out.println(c1 == c3); // false
 
         c1.newInstance();
     }

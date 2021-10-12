@@ -5,7 +5,7 @@ public class Load8 {
 
     static int a;
     static int b = 10;
-    static final int c = 20;
-    static final String d = "hello";
-    static final Object e = new Object();
+//    static final int c = 20;
+//    static final Object e = new Object();
+//    static final String d = "hello";
 }
