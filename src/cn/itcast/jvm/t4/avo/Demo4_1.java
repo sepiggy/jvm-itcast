@@ -8,16 +8,16 @@ public class Demo4_1 {
 
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(() -> {
-            synchronized (obj) {
-                for (int j = 0; j < 50000; j++) {
+            for (int j = 0; j < 50000; j++) {
+                synchronized (obj) {
                     i++;
                 }
             }
         });
 
         Thread t2 = new Thread(() -> {
-            synchronized (obj) {
-                for (int j = 0; j < 50000; j++) {
+            for (int j = 0; j < 50000; j++) {
+                synchronized (obj) {
                     i--;
                 }
             }
