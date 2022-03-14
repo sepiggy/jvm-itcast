@@ -3,10 +3,11 @@ package cn.itcast.jvm.t4.avo;
 public class Demo4_2 {
 
     static boolean run = true;
+//    volatile static boolean run = true;
 
     public static void main(String[] args) throws InterruptedException {
-        Thread t = new Thread(()->{
-            while(run){
+        Thread t = new Thread(() -> {
+            while (run) {
                 // ....
                 System.out.println(1);
             }
